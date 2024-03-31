@@ -34,7 +34,7 @@ while True:
             if event.key == pygame.K_SPACE:
                 damage_calculator.calculate_damage(dice,0,0)
             if event.key == pygame.K_d:
-                gcm.damage(damage_calculator.calculate_damage(dice,0,0))
+                gcm.damage(damage_calculator.calculate_damage(dice,0,0),player)
 
     #updates everything
     player.update()
