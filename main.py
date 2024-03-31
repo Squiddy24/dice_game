@@ -15,10 +15,9 @@ screen = pygame.display.set_mode((0,0),pygame.FULLSCREEN)
 player = Player()
 gcm = GCM()
 damage_calculator = Damage_calculator()
-
-#test to make sure github works (DONT FORGET TO NAME COMMIT OF EVERYTHING BREAKS)
+gcm.spawn_enemy()
 #DEBUG SHIT
-dice = [[[1, "imbue"],[2],[3,"imbue"],[4],[5],[6]],[[1],[2],[3,"imbue"],[4],[5],[6,"imbue"]]]
+dice = [[[1, "sock"],[2],[3,"hat"],[4],[5],[6]],[[1],[2],[3,"sock"],[4],[5],[6,"hat"]]]
 
 #gameloop
 while True:
@@ -33,12 +32,12 @@ while True:
                 pygame.quit()
                 exit(0)
             if event.key == pygame.K_SPACE:
-                damage_calculator.calculate_damage(dice,0)
+                damage_calculator.calculate_damage(dice,0,0)
+            if event.key == pygame.K_d:
+                gcm.damage(damage_calculator.calculate_damage(dice,0,0))
 
     #updates everything
     player.update()
-    gcm.update()
-
     #draws the screen
     pygame.display.flip()
     screen.fill((0,0,0))
