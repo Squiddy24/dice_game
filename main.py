@@ -16,6 +16,7 @@ player = Player()
 gcm = GCM()
 damage_calculator = Damage_calculator()
 
+#test to make sure github works
 #DEBUG SHIT
 dice = [[[1, "imbue"],[2],[3,"imbue"],[4],[5],[6]],[[1],[2],[3,"imbue"],[4],[5],[6,"imbue"]]]
 
