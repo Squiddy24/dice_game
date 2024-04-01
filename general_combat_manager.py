@@ -14,17 +14,16 @@ class GCM():
             self.enemy_health = enemy_stats["enemy_2"]["health"]
             self.enemy_die = enemy_stats["enemy_2"]["damage"]
             self.ememy_modifier = enemy_stats["enemy_2"]["modifer"]
-
-
     #runs every frame
     def damage(self,final_damage, player):
         self.enemy_health -= final_damage 
         print(f"you dealt {final_damage} damage. The enemy has {self.enemy_health} remaning")
         if self.enemy_health <= 0:
             print("yo that dudes dead")
+            gold_get = randint(1, 3)
+            player.gold += gold_get
+            print(f"you got {gold_get} gold, you now have {gold_get} gold")
         else: 
             enemy_damage = self.enemy_die[randint(0,5)]
             player.health -= enemy_damage + self.ememy_modifier
             print(f"you took {enemy_damage + self.ememy_modifier} damage, you have {player.health} health left")
-            
-            

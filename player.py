@@ -5,7 +5,8 @@ class Player():
         self.relics = []
         self.weapons = []
         self.health = 20 
-        
+        self.gold = 0 
+
     #runs every frame
     def update(self):
         pass

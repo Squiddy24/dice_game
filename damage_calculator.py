@@ -22,11 +22,11 @@ class Damage_calculator():
         if len(dice[1][face_2]) > 1:
             imbue_damage_face_2 = imbue_manager.calculate_imbue_damage(dice[1][face_2][1])
 
-        base_damage = dice[0][face_1][0] + dice[1][face_2][0]
-        final_damage = base_damage + imbue_damage_face_1 + imbue_damage_face_2
+        base_damage = [dice[0][face_1][0], dice[1][face_2][0]]
+        final_damage = sum(base_damage) + imbue_damage_face_1 + imbue_damage_face_2
 
         print(f"\n you have an inbue that does {imbue_damage_face_1} damage")
         print(f"you have an inbue that does {imbue_damage_face_2} damage")
         print(f"face 1 = {face_1 + 1}, face 2 = {face_2 + 1}, total is = {final_damage}")
 
-        return final_damage
+        return [final_damage,base_damage]
